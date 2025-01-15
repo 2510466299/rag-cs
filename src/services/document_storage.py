@@ -1,6 +1,10 @@
+import logging
 from typing import Dict, List, Optional, Set
 from fastapi import HTTPException
 from neo4j.exceptions import ServiceUnavailable
+
+# Configure logger
+logger = logging.getLogger(__name__)
 
 class DocumentStorage:
     def get_document(self, doc_id: str) -> Optional[Dict]:
